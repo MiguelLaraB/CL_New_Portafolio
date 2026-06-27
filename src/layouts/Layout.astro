@@ -1,7 +1,6 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -10,18 +9,84 @@ import Footer from '../components/Footer.astro';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Código Local" />
+    <meta name="theme-color" content="#0a0a0f" />
+
     <title>Código Local | Soluciones de Software a Medida</title>
-    <meta name="description" content="Transformamos tu negocio con soluciones digitales: chatbots inteligentes, sistemas POS, apps móviles y desarrollo web. Contáctanos hoy." />
-    <meta name="keywords" content="desarrollo de software, chatbots, POS, apps móviles, páginas web, Orizaba, Córdoba" />
-    <link rel="canonical" href="https://codigolocal.dev" />
+    <meta
+      name="description"
+      content="Transformamos tu negocio con soluciones digitales: chatbots inteligentes, sistemas POS, apps móviles y desarrollo web. Contáctanos hoy."
+    />
+    <meta
+      name="keywords"
+      content="desarrollo de software, chatbots, POS, apps móviles, páginas web, Orizaba, Córdoba"
+    />
+    <link rel="canonical" href="https://codigolocal.com.mx" />
     <link rel="icon" type="image/png" href="/logo_cl.png" />
-    <meta property="og:title" content="Código Local - Soluciones de Software a Medida" />
-    <meta property="og:description" content="Desarrollamos software que impulsa tu empresa: chatbots, POS, apps móviles y más." />
-    <meta property="og:image" content="/logo_cl.png" />
+    <meta
+      property="og:title"
+      content="Código Local - Soluciones de Software a Medida"
+    />
+    <meta
+      property="og:description"
+      content="Desarrollamos software que impulsa tu empresa: Páginas web, Sistemas POS, apps móviles y chatbots."
+    />
+    <meta
+      property="og:image"
+      content="https://codigolocal.com.mx/logo_cl_texto.png"
+    />
+    <meta property="og:url" content="https://codigolocal.com.mx" />
+    <meta property="og:site_name" content="Código Local" />
+    <meta property="og:locale" content="es_MX" />
     <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Código Local | Soluciones de Software a Medida"
+    />
+    <meta
+      name="twitter:description"
+      content="Desarrollo de software para negocios o empresas"
+    />
+    <meta
+      name="twitter:image"
+      content="https://codigolocal.com.mx/logo_cl_texto.png"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "Código Local",
+        url: "https://codigolocal.com.mx",
+        logo: "https://codigolocal.com.mx/logo_cl.png",
+        description:
+          "Empresa dedicada al desarrollo de software, páginas web, sistemas POS, aplicaciones móviles y chatbots.",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "codigolocal12@gmail.com",
+          contactType: "customer service",
+          availableLanguage: ["es"],
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Orizaba",
+          addressRegion: "Veracruz",
+          addressCountry: "MX",
+        },
+      })}
+    />
   </head>
   <body>
     <Navbar />
@@ -41,7 +106,7 @@ import Footer from '../components/Footer.astro';
     --accent: #58a6ff;
     --accent-gradient: linear-gradient(135deg, #58a6ff, #6c5ce7);
     --accent-hover: #7cb8ff;
-    --whatsapp: #25D366;
+    --whatsapp: #25d366;
     --whatsapp-hover: #20bd5a;
     --text-primary: #ffffff;
     --text-secondary: #a0a0b8;
@@ -65,9 +130,15 @@ import Footer from '../components/Footer.astro';
     scroll-padding-top: var(--nav-height);
   }
 
-  html, body {
+  html,
+  body {
     height: 100%;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -75,8 +146,13 @@ import Footer from '../components/Footer.astro';
     color: var(--text-primary);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Oswald", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -129,7 +205,7 @@ import Footer from '../components/Footer.astro';
     cursor: pointer;
     border: none;
     transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .btn-primary {
@@ -170,12 +246,22 @@ import Footer from '../components/Footer.astro';
   }
 
   @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (max-width: 768px) {
-    .section { padding: 3rem 0; }
-    .section-title { font-size: 1.8rem; }
-    .section-subtitle { font-size: 1rem; margin-bottom: 2rem; }
+    .section {
+      padding: 3rem 0;
+    }
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
   }
 </style>
