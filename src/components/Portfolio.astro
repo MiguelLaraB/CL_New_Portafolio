@@ -1,0 +1,155 @@
+---
+const projects = [
+  {
+    title: "Invitación de Boda Digital",
+    image: "/miniatura_wedding_landing.png",
+    link: "https://cl-wedding-invitation-landing.vercel.app/",
+    tag: "Web",
+  },
+  {
+    title: "Catálogo de Ferretería",
+    image: "/Catalogo.PNG",
+    link: "https://cl-catalogo-landing.vercel.app/",
+    tag: "Web",
+  },
+  {
+    title: "Torneos de Videojuegos",
+    image: "/Torneos.PNG",
+    link: "https://cl-torneos-landing.vercel.app/",
+    tag: "Web",
+  },
+  {
+    title: "Sistema POS & Inventario",
+    image: "/pos.png",
+    link: "https://cl-pos-demo.vercel.app/sales",
+    tag: "POS",
+  },
+  {
+    title: "Plataforma RCP",
+    image: "/RCP.PNG",
+    link: "https://rcp-rosy.vercel.app/",
+    tag: "Web",
+  },
+];
+---
+
+<section class="section" id="portafolio">
+  <div class="container">
+    <h2 class="section-title">Proyectos Recientes</h2>
+    <p class="section-subtitle">
+      Conoce algunos de los proyectos que hemos desarrollado.
+    </p>
+    <div class="portfolio-grid">
+      {
+        projects.map((project) => (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="portfolio-card"
+          >
+            <div class="portfolio-image">
+              <img src={project.image} alt={project.title} loading="lazy" />
+              <span class="portfolio-tag">{project.tag}</span>
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-title">{project.title}</h3>
+              <span class="portfolio-link">Ver demo →</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <div class="portfolio-more">
+      <a href="/web-pages" class="btn btn-outline">Ver todos los proyectos</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .portfolio-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .portfolio-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(88, 166, 255, 0.1);
+  }
+  .portfolio-image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg-elevated);
+  }
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .portfolio-card:hover .portfolio-image img {
+    transform: scale(1.05);
+  }
+  .portfolio-tag {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .portfolio-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .portfolio-title {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+  }
+  .portfolio-link {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
+  .portfolio-more {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

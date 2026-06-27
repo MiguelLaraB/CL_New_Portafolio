@@ -1,0 +1,179 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Reunión",
+    description:
+      "Nos comunicamos contigo para entender tu negocio, tus objetivos y los requerimientos del proyecto. Sin costo ni compromiso.",
+  },
+  {
+    number: "02",
+    title: "Propuesta",
+    description:
+      "Te realizamos una propuesta tomando en cuenta el tiempo y el presupuesto. Ajustamos hasta que estés 100% conforme.",
+  },
+  {
+    number: "03",
+    title: "Desarrollo",
+    description:
+      "Trabajamos tu proyecto con metodologías ágiles. Recibes avances constantes y entregas parciales para validar cada etapa.",
+  },
+  {
+    number: "04",
+    title: "Pruebas",
+    description:
+      "Probamos cada funcionalidad para garantizar calidad, rendimiento y seguridad. Te involucramos en las pruebas finales.",
+  },
+  {
+    number: "05",
+    title: "Entrega",
+    description:
+      "Desplegamos tu solución, te capacitamos para su uso. Tu éxito es nuestra prioridad.",
+  },
+];
+---
+
+<section class="section" id="proceso">
+  <div class="container">
+    <h2 class="section-title">Cómo Trabajamos</h2>
+    <p class="section-subtitle">
+      Un proceso transparente y eficiente para llevar tu proyecto de la idea a
+      la realidad.
+    </p>
+    <div class="process-steps">
+      {
+        steps.map((step) => (
+          <div class="paso-container">
+            <div class="paso-stripe" />
+            <div class="process-step">
+              <div class="step-number">{step.number}</div>
+              <div class="step-content">
+                <h3 class="step-title">{step.title}</h3>
+                <p class="step-description">{step.description}</p>
+              </div>
+            </div>
+            {step.number !== "05" && <div class="step-line" />}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-steps {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+  .paso-container {
+    position: relative;
+    padding: 1.5rem 1.8rem;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .paso-container:hover {
+    transform: translateX(6px);
+  }
+  .paso-stripe {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(88, 166, 255, 0.06),
+      rgba(108, 92, 231, 0.06)
+    );
+    clip-path: polygon(3% 0%, 100% 0%, 97% 100%, 0% 100%);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    pointer-events: none;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+  .paso-container:hover .paso-stripe {
+    opacity: 1;
+    transform: translateX(0);
+    border-color: rgba(88, 166, 255, 0.15);
+  }
+  .process-step {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .step-number {
+    font-family: "Oswald", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    line-height: 1;
+    min-width: 60px;
+    transition:
+      color 0.3s ease,
+      text-shadow 0.3s ease;
+  }
+  .paso-container:hover .step-number {
+    color: var(--accent);
+    text-shadow: 0 0 12px rgba(88, 166, 255, 0.3);
+  }
+  .step-content {
+    flex: 1;
+  }
+  .step-title {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  .paso-container:hover .step-title {
+    color: #bd93f9;
+  }
+  .step-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    font-family: "Inter", sans-serif;
+    transition: color 0.3s ease;
+  }
+  .paso-container:hover .step-description {
+    color: var(--text-primary);
+  }
+  .step-line {
+    position: absolute;
+    left: 33px;
+    bottom: 0;
+    width: 1px;
+    height: 1rem;
+    background: var(--border);
+    transition: background 0.3s ease;
+    z-index: 1;
+  }
+  .paso-container:hover .step-line {
+    background: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .process-step {
+      gap: 1rem;
+    }
+    .step-number {
+      font-size: 2rem;
+      min-width: 45px;
+    }
+    .paso-container {
+      padding: 1.2rem 1rem;
+    }
+    .paso-container:hover {
+      transform: translateX(4px);
+    }
+  }
+</style>

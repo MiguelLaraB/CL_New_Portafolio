@@ -1,0 +1,172 @@
+---
+const services = [
+  {
+    icon: "chatbot",
+    title: "Chatbots Inteligentes",
+    description:
+      "Automatiza la atención a tus clientes con chatbots. Responde dudas y opera 24/7.",
+  },
+  {
+    icon: "pos",
+    title: "Sistemas POS & Inventarios",
+    description:
+      "Punto de venta moderno con gestión de inventario en tiempo real. Controla ventas, stock y reportes desde cualquier dispositivo.",
+  },
+  {
+    icon: "web",
+    title: "Páginas Web & Plataformas",
+    description:
+      "Desde landing pages convensionales hasta plataformas web complejas. Diseño moderno, rápido y optimizado para buscadores.",
+  },
+  {
+    icon: "app",
+    title: "Aplicaciones Móviles",
+    description:
+      "Apps nativas para Android. Lleva tu negocio al bolsillo de tus clientes con experiencias fluidas.",
+  },
+];
+---
+
+<section class="section" id="servicios">
+  <div class="container">
+    <h2 class="section-title">Servicios</h2>
+    <p class="section-subtitle">
+      Soluciones tecnológicas completas para impulsar la transformación digital
+      de tu empresa.
+    </p>
+    <div class="services-grid">
+      {
+        services.map((service) => (
+          <article class="service-card">
+            <div class="service-icon">
+              {service.icon === "chatbot" && (
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 011 1v3a1 1 0 01-1 1h-1.27A7.04 7.04 0 0114 21h-4a7.04 7.04 0 01-3.73-1H5a1 1 0 01-1-1v-3a1 1 0 011-1h1a7 7 0 017-7h1v-1.27c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM9 14v1m6-1v1m-6-5l3 3 3-3" />
+                </svg>
+              )}
+              {service.icon === "pos" && (
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8m-4-4v4" />
+                </svg>
+              )}
+              {service.icon === "web" && (
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20" />
+                  <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                </svg>
+              )}
+              {service.icon === "app" && (
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="4" y="2" width="16" height="20" rx="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+              )}
+            </div>
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-description">{service.description}</p>
+            <a href="/home#contacto" class="service-cta">
+              Solicitar información →
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(88, 166, 255, 0.1);
+  }
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(88, 166, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+  .service-title {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .service-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-family: "Inter", sans-serif;
+    flex: 1;
+  }
+  .service-cta {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: gap 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .service-cta:hover {
+    gap: 0.6rem;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

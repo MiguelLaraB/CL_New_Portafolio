@@ -1,0 +1,446 @@
+---
+
+---
+
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="container">
+    <div class="hero-layout">
+      <div class="hero-text">
+        <span class="hero-badge">Desarrollo de Software a Medida</span>
+        <h1 class="hero-title">
+          Transformamos tus ideas en<br />
+          <span class="hero-gradient">soluciones digitales</span>
+        </h1>
+        <p class="hero-description">
+          Creamos soluciones como
+        </p>
+        <div class="hero-services">
+          <span class="service-chip">
+            <span class="chip-bg" style="clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);"></span>
+            <span class="chip-label">Páginas Web</span>
+            <svg class="chip-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <span class="chip-shine"></span>
+          </span>
+          <span class="service-chip">
+            <span class="chip-bg" style="clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);"></span>
+            <span class="chip-label">Sistemas POS</span>
+            <svg class="chip-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+            <span class="chip-shine"></span>
+          </span>
+          <span class="service-chip">
+            <span class="chip-bg" style="clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);"></span>
+            <span class="chip-label">Chatbots</span>
+            <svg class="chip-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 011 1v3a1 1 0 01-1 1h-1.27A7.04 7.04 0 0114 21h-4a7.04 7.04 0 01-3.73-1H5a1 1 0 01-1-1v-3a1 1 0 011-1h1a7 7 0 017-7h1v-1.27c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM9 14v1m6-1v1"/></svg>
+            <span class="chip-shine"></span>
+          </span>
+          <span class="service-chip">
+            <span class="chip-bg" style="clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);"></span>
+            <span class="chip-label">Apps Móviles</span>
+            <svg class="chip-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            <span class="chip-shine"></span>
+          </span>
+        </div>
+        <p class="hero-description secondary">
+          Tecnología moderna, resultados reales para tu negocio.
+        </p>
+        <div class="hero-actions">
+          <a href="/home#contacto" class="btn btn-primary btn-lg">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Contáctanos
+          </a>
+          <a href="#servicios" class="btn btn-outline btn-lg">Ver servicios</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">4+</span>
+            <span class="hero-stat-label">Proyectos entregados</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Clientes satisfechos</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">24/7</span>
+            <span class="hero-stat-label">Soporte continuo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-terminal-col">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">terminal.ps1</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-line">
+              <span class="prompt">❯</span>
+              <span class="typewriter-output" id="typewriterOutput"></span>
+              <span class="typewriter-cursor" id="typewriterCursor">▊</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 3rem 0;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(88, 166, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(88, 166, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
+  .hero-glow {
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(88, 166, 255, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .hero-badge {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.4rem 1.2rem;
+    background: rgba(88, 166, 255, 0.1);
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    color: var(--text-primary);
+    text-transform: uppercase;
+  }
+  .hero-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+  }
+  .hero-description.secondary {
+    margin-top: 0.5rem;
+  }
+
+  /* SERVICE CHIPS */
+  .hero-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .service-chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.4rem 0.9rem 0.4rem 1rem;
+    cursor: default;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: transform 0.25s ease;
+  }
+  .service-chip:hover {
+    transform: translateX(4px);
+  }
+  .chip-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.08), rgba(108, 92, 231, 0.08));
+    transition: all 0.35s ease;
+    z-index: 0;
+  }
+  .service-chip:hover .chip-bg {
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.2), rgba(108, 92, 231, 0.2));
+  }
+  .chip-label {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+  }
+  .service-chip:hover .chip-label {
+    color: var(--accent);
+  }
+  .chip-icon {
+    position: relative;
+    z-index: 1;
+    color: var(--text-muted);
+    transition: color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+  }
+  .service-chip:hover .chip-icon {
+    color: var(--accent);
+    transform: scale(1.15);
+  }
+  .chip-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .service-chip:hover .chip-shine {
+    left: 100%;
+  }
+
+  /* HERO ACTIONS & STATS (sin cambios) */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .hero-actions .btn-lg {
+    padding: 1rem 2.2rem;
+    font-size: 1.05rem;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .hero-stat-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .hero-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+  }
+
+  /* TERMINAL WINDOW */
+  .hero-terminal-col {
+    display: flex;
+    justify-content: center;
+  }
+  .terminal-window {
+    width: 100%;
+    max-width: 500px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(88, 166, 255, 0.05),
+      0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+  }
+  .terminal-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+  .terminal-title {
+    font-size: 0.75rem;
+    color: #8b949e;
+    font-family: 'Inter', monospace;
+    font-weight: 500;
+  }
+  .terminal-body {
+    padding: 1.2rem 1.2rem 1.5rem;
+    font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    min-height: 170px;
+    display: flex;
+    align-items: flex-start;
+  }
+  .terminal-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+  .prompt {
+    color: #58a6ff;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .typewriter-output {
+    color: #e6edf3;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .typewriter-output .comment-line {
+    color: #8b949e;
+    font-style: italic;
+  }
+  .typewriter-output .code-line {
+    color: #e6edf3;
+  }
+  .typewriter-output .code-line.glow {
+    color: #00ff88;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+  }
+  .typewriter-cursor {
+    color: #58a6ff;
+    animation: blink 1s step-end infinite;
+    flex-shrink: 0;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 968px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-terminal-col {
+      order: -1;
+    }
+    .terminal-window {
+      max-width: 100%;
+    }
+    .hero-stats {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .hero { padding: 2rem 0; min-height: auto; }
+    .hero-stats { gap: 1.5rem; }
+    .hero-description { font-size: 0.95rem; }
+    .service-chip { padding: 0.35rem 0.7rem 0.35rem 0.8rem; }
+    .chip-icon { width: 14px; height: 14px; }
+    .terminal-body { font-size: 0.7rem; min-height: 140px; }
+  }
+  @media (max-width: 480px) {
+    .hero-services { gap: 0.4rem; }
+    .hero-actions .btn-lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  const LINES = [
+    { text: '// IDEA: Un POS para cafeterías locales', css: 'comment-line' },
+    { text: 'const localCoffeePOS = new App({ type: \'sistemasPOS\', features: [\'inventario_realtime\', \'pago_contactless\'] });', css: 'code-line' },
+  ];
+
+  const output = document.getElementById('typewriterOutput');
+  const cursor = document.getElementById('typewriterCursor');
+  let running = true;
+
+  function sleep(ms) {
+    return new Promise((r) => setTimeout(r, ms));
+  }
+
+  async function typeText(text, el) {
+    for (let i = 0; i < text.length; i++) {
+      if (!running) return;
+      el.textContent += text[i];
+      await sleep(20 + Math.random() * 15);
+    }
+  }
+
+  async function runLoop() {
+    while (running) {
+      output.innerHTML = '';
+      for (const line of LINES) {
+        const div = document.createElement('div');
+        div.className = line.css;
+        output.appendChild(div);
+        await typeText(line.text, div);
+        await sleep(300);
+      }
+      const glowEl = output.querySelector('.code-line');
+      if (glowEl) glowEl.classList.add('glow');
+      cursor.style.display = 'none';
+      await sleep(3500);
+      cursor.style.display = 'inline-block';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => runLoop());
+</script>
